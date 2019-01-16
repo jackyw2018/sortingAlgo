@@ -17,5 +17,16 @@ describe('Bubble Sort', function () {
         expect(bubbleSort(unsortedArr)).toEqual(sortedArr);
     })
 
-    // if ('accepts a long array and returns a sorted array')
+    it('accepts a long array and returns a sorted array', function () {
+        let longUnsortedArr = Array.from({ length: 40 }, function () {
+            return Math.round(Math.random() * 100);
+        })
+
+        let longSortedArr = longUnsortedArr.slice();
+        longSortedArr.sort(function (a, b) {
+            return a - b;
+        });
+
+        expect(bubbleSort(longUnsortedArr)).toEqual(longSortedArr);
+    })
 })
